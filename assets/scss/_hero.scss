@@ -1,0 +1,191 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url("../img/Background_V2.png") center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .container-fluid {
+    max-width: 1920px;
+  }
+
+  .hero-content {
+    padding-top: 120px;
+    padding-bottom: 100px;
+
+    /* ===== HERO TITLE ===== */
+    .hero-title {
+      font-family: "Titillium Web", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: clamp(2rem, 3vw, 3.1rem); // equals ~50px at desktop
+      line-height: 78px;
+      letter-spacing: 0;
+      color: #ffffff;
+      text-align: left;
+      margin-bottom: 1rem;
+
+      .powered {
+        color: #0E88D2; // bright blue
+        margin-right: 4px;
+      }
+
+      .by {
+        color: #198BD1; // slightly darker blue
+        margin-right: 6px;
+      }
+
+      .robonego {
+        color: #ffffff; // white
+      }
+
+      @media (max-width: 991px) {
+        text-align: center;
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        line-height: 1.3;
+      }
+
+      @media (max-width: 575px) {
+        font-size: 1.6rem;
+        line-height: 1.4;
+      }
+    }
+
+    /* ===== HERO DESCRIPTION ===== */
+    .hero-desc {
+      font-size: clamp(1rem, 1.1vw, 1.2rem);
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+      max-width: 480px;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* ===== GET STARTED BUTTON ===== */
+    .hero-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: transparent;
+      border: none;
+      padding-left: 70px;
+      font-family: "Poppins", sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 27px;
+      text-transform: uppercase;
+      letter-spacing: 0;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+      z-index: 1;
+
+      /* inner text colors */
+      .get-text {
+        color: #010815; /* black text */
+        margin-right: 6px;
+      }
+
+      .started-text {
+        color: #ffffff; /* white text */
+      }
+
+      /* white oval background */
+      &::before {
+        content: "";
+        position: absolute;
+        left: 38px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 70px;
+        height: 58px;
+        background: #ffffff;
+        border-radius: 45%;
+        z-index: -1;
+        transition: all 0.3s ease-out;
+      }
+
+      &:hover {
+        .get-text {
+          color: #ffffff; /* invert colors on hover */
+        }
+        .started-text {
+          color: #010815;
+        }
+
+        &::before {
+          background: #0071CE;
+          transform: translateY(-50%) scale(1.1);
+          box-shadow: 0 5px 15px rgba(0, 113, 206, 0.3);
+        }
+      }
+
+      &:active {
+        transform: scale(0.98);
+      }
+    }
+  }
+
+  /* ===== HERO CAR IMAGE ===== */
+  .hero-car {
+    width: 100%;
+    max-width: 650px;
+    position: relative;
+    right: 0;
+    bottom: 0;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 991px) {
+    text-align: center;
+    background-position: top center;
+
+    .hero-content {
+      padding: 80px 0;
+
+      .hero-title {
+        font-size: clamp(1.8rem, 4vw, 2.8rem);
+      }
+
+      .hero-desc {
+        margin: 1rem auto 2rem;
+      }
+
+      .hero-btn {
+        padding-left: 65px;
+        font-size: 16px;
+      }
+    }
+
+    .hero-car {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+
+  @media (max-width: 575px) {
+    .hero-content {
+      padding: 60px 0;
+
+      .hero-title {
+        font-size: 1.6rem;
+      }
+
+      .hero-desc {
+        font-size: 0.95rem;
+      }
+
+      .hero-btn {
+        padding-left: 60px;
+
+        &::before {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}
