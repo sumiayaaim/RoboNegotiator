@@ -13,67 +13,1982 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:wght@400;500;700&family=Titillium+Web:wght@700&display=swap" rel="stylesheet">
+<style>
+     /* ========== SERVICES SECTION ========== */
+        .services-section {
+            position: relative;
+            width: 100%;
+            background: #010815;
+            padding: 100px 0 120px;
+            overflow: hidden;
+        }
 
+        /* Blur Effect Background */
+        .services-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120%;
+            height: 224px;
+            background: #010815;
+            filter: blur(50px);
+            z-index: 0;
+            opacity: 1;
+        }
+
+        .services-section .container-fluid {
+            max-width: 1920px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section Title */
+        .services-title {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 78px;
+            letter-spacing: 0;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 80px;
+            opacity: 1;
+        }
+
+        /* Services Container */
+        .services-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 70px;
+            flex-wrap: wrap;
+        }
+
+        /* Individual Service Card */
+        .service-card {
+            position: relative;
+            width: 260px;
+            height: 260px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 10px solid #FFFFFF;
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+            border-color: #0E88D2;
+        }
+
+        /* Service Icon */
+        .service-icon {
+            width: 102px;
+            height: 63px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .service-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Dollar Sign Overlay */
+        .service-icon-dollar {
+            justify-content: flex-start;
+        }
+
+        .dollar-sign {
+            position: absolute;
+            top: 45%;
+            left: 40%;
+            transform: translate(-50%, -50%);
+            font-family: 'Arial', sans-serif;
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 1;
+            color: #FFFFFF;
+            opacity: 1;
+            z-index: 2;
+        }
+
+        /* Service Label */
+        .service-label {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 1.4;
+            letter-spacing: 0.5px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            text-align: center;
+            max-width: 180px;
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+        
+        /* Large Desktop (1920px) */
+        @media (min-width: 1920px) {
+            .services-section {
+                padding: 120px 0 140px;
+            }
+        }
+
+        /* Desktop (1400px - 1919px) */
+        @media (min-width: 1400px) and (max-width: 1919px) {
+            .services-section {
+                padding: 100px 0 120px;
+            }
+            
+            .services-title {
+                font-size: 48px;
+                line-height: 72px;
+                margin-bottom: 70px;
+            }
+            
+            .services-container {
+                gap: 60px;
+            }
+        }
+
+        /* Laptop (1200px - 1399px) */
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            .services-section {
+                padding: 90px 0 110px;
+            }
+            
+            .services-title {
+                font-size: 45px;
+                line-height: 68px;
+                margin-bottom: 60px;
+            }
+            
+            .services-container {
+                gap: 50px;
+            }
+            
+            .service-card {
+                width: 240px;
+                height: 240px;
+                border-width: 9px;
+            }
+            
+            .service-icon {
+                width: 95px;
+                height: 58px;
+            }
+        }
+
+        /* Tablet (768px - 1199px) */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .services-section {
+                padding: 80px 0 100px;
+            }
+            
+            .services-title {
+                font-size: 40px;
+                line-height: 60px;
+                margin-bottom: 50px;
+            }
+            
+            .services-container {
+                gap: 40px;
+            }
+            
+            .service-card {
+                width: 220px;
+                height: 220px;
+                border-width: 8px;
+            }
+            
+            .service-icon {
+                width: 90px;
+                height: 55px;
+            }
+            
+            .service-label {
+                font-size: 13px;
+            }
+        }
+
+        /* Mobile (576px - 767px) */
+        @media (min-width: 576px) and (max-width: 767px) {
+            .services-section {
+                padding: 60px 0 80px;
+            }
+            
+            .services-title {
+                font-size: 36px;
+                line-height: 52px;
+                margin-bottom: 40px;
+            }
+            
+            .services-container {
+                gap: 30px;
+            }
+            
+            .service-card {
+                width: 200px;
+                height: 200px;
+                border-width: 7px;
+            }
+            
+            .service-icon {
+                width: 80px;
+                height: 50px;
+            }
+            
+            .service-label {
+                font-size: 12px;
+            }
+        }
+
+        /* Small Mobile (< 576px) */
+        @media (max-width: 575px) {
+            .services-section {
+                padding: 50px 0 70px;
+            }
+            
+            .services-title {
+                font-size: 32px;
+                line-height: 48px;
+                margin-bottom: 35px;
+            }
+            
+            .services-container {
+                gap: 25px;
+                flex-direction: column;
+            }
+            
+            .service-card {
+                width: 180px;
+                height: 180px;
+                border-width: 6px;
+            }
+            
+            .service-icon {
+                width: 70px;
+                height: 45px;
+                margin-bottom: 12px;
+            }
+            
+            .service-label {
+                font-size: 11px;
+                max-width: 140px;
+            }
+        }  
+           /* ========== TECHNOLOGIES SECTION ========== */
+        .technologies-section {
+            position: relative;
+            width: 100%;
+            min-height: 1532px;
+            background: #010815;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        /* Background Car Image - Exact positioning */
+        .technologies-bg-wrapper {
+            position: absolute;
+            top: 0;
+            left: -4px;
+            width: 1924px;
+            height: 1532px;
+            z-index: 0;
+        }
+
+        .technologies-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: right center;
+            opacity: 1;
+        }
+
+        .technologies-section .container-fluid {
+            max-width: 1920px;
+            position: relative;
+            z-index: 1;
+            padding: 0;
+        }
+
+        /* Content Container - Exact positioning */
+        .technologies-content-wrapper {
+            position: relative;
+            padding-top: 417px;
+            padding-left: 150px;
+        }
+
+        /* Section Title - Exact specs */
+        .technologies-heading {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 700;
+            font-size: 44px;
+            line-height: 67px;
+            letter-spacing: 0;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            text-align: left;
+            margin-bottom: 59px;
+            opacity: 1;
+            width: 657px;
+            height: 73px;
+        }
+
+        /* Content List */
+        .technologies-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .technologies-list-item {
+            position: relative;
+            padding-left: 47px;
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 51px;
+            letter-spacing: 0.46px;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            opacity: 1;
+            margin-bottom: 0;
+        }
+
+        /* First item - exact positioning */
+        .technologies-list-item:nth-child(1) {
+            width: 382px;
+            height: 31px;
+            margin-bottom: 56px;
+        }
+
+        /* Second item */
+        .technologies-list-item:nth-child(2) {
+            width: 437px;
+            height: 31px;
+            margin-bottom: 53px;
+        }
+
+        /* Third item */
+        .technologies-list-item:nth-child(3) {
+            width: 454px;
+            height: 31px;
+            margin-bottom: 54px;
+        }
+
+        /* Fourth item - multiline */
+        .technologies-list-item:nth-child(4) {
+            width: 590px;
+            height: 82px;
+            margin-bottom: 56px;
+        }
+
+        /* Fifth item - multiline */
+        .technologies-list-item:nth-child(5) {
+            width: 569px;
+            height: 82px;
+        }
+
+        /* Custom Bullet Point */
+        .technologies-list-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20px;
+            width: 12px;
+            height: 12px;
+            background: #FFFFFF;
+            border-radius: 50%;
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+
+        /* Large Desktop (1920px) */
+        @media (min-width: 1920px) {
+            .technologies-section {
+                min-height: 1532px;
+            }
+        }
+
+        /* Desktop (1400px - 1919px) */
+        @media (min-width: 1400px) and (max-width: 1919px) {
+            .technologies-content-wrapper {
+                padding-top: 350px;
+                padding-left: 120px;
+            }
+
+            .technologies-bg-wrapper {
+                width: 100%;
+                left: 0;
+            }
+
+            .technologies-heading {
+                font-size: 45px;
+                line-height: 62px;
+                width: auto;
+                max-width: 650px;
+            }
+
+            .technologies-list-item {
+                width: auto;
+                max-width: 600px;
+            }
+        }
+
+        /* Laptop (1200px - 1399px) */
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            .technologies-section {
+                min-height: 1200px;
+            }
+
+            .technologies-content-wrapper {
+                padding-top: 300px;
+                padding-left: 100px;
+            }
+
+            .technologies-bg-wrapper {
+                width: 100%;
+                left: 0;
+            }
+
+            .technologies-heading {
+                font-size: 42px;
+                line-height: 58px;
+                width: auto;
+                max-width: 600px;
+                margin-bottom: 50px;
+            }
+
+            .technologies-list-item {
+                font-size: 18px;
+                line-height: 45px;
+                width: auto;
+                max-width: 550px;
+                padding-left: 50px;
+            }
+
+            .technologies-list-item::before {
+                top: 17px;
+            }
+
+            .technologies-list-item:nth-child(1),
+            .technologies-list-item:nth-child(2),
+            .technologies-list-item:nth-child(3) {
+                margin-bottom: 45px;
+            }
+
+            .technologies-list-item:nth-child(4),
+            .technologies-list-item:nth-child(5) {
+                margin-bottom: 45px;
+            }
+        }
+
+        /* Tablet (768px - 1199px) */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .technologies-section {
+                min-height: 1000px;
+            }
+
+            .technologies-content-wrapper {
+                padding-top: 250px;
+                padding-left: 80px;
+            }
+
+            .technologies-bg-wrapper {
+                width: 100%;
+                left: 0;
+                opacity: 0.7;
+            }
+
+            .technologies-heading {
+                font-size: 38px;
+                line-height: 52px;
+                width: auto;
+                max-width: 500px;
+                margin-bottom: 45px;
+            }
+
+            .technologies-list-item {
+                font-size: 17px;
+                line-height: 40px;
+                width: auto;
+                max-width: 450px;
+                padding-left: 45px;
+            }
+
+            .technologies-list-item::before {
+                width: 10px;
+                height: 10px;
+                top: 15px;
+            }
+
+            .technologies-list-item:nth-child(1),
+            .technologies-list-item:nth-child(2),
+            .technologies-list-item:nth-child(3) {
+                margin-bottom: 35px;
+            }
+
+            .technologies-list-item:nth-child(4),
+            .technologies-list-item:nth-child(5) {
+                margin-bottom: 35px;
+            }
+        }
+
+        /* Mobile (576px - 767px) */
+        @media (min-width: 576px) and (max-width: 767px) {
+            .technologies-section {
+                min-height: 800px;
+            }
+
+            .technologies-content-wrapper {
+                padding-top: 150px;
+                padding-left: 40px;
+                padding-right: 40px;
+            }
+
+            .technologies-bg-wrapper {
+                width: 100%;
+                height: 100%;
+                left: 0;
+                opacity: 0.5;
+            }
+
+            .technologies-bg-img {
+                object-position: bottom right;
+            }
+
+            .technologies-heading {
+                font-size: 32px;
+                line-height: 44px;
+                width: auto;
+                height: auto;
+                margin-bottom: 35px;
+            }
+
+            .technologies-list-item {
+                font-size: 15px;
+                line-height: 36px;
+                width: auto;
+                height: auto;
+                padding-left: 35px;
+            }
+
+            .technologies-list-item::before {
+                width: 9px;
+                height: 9px;
+                top: 13px;
+            }
+
+            .technologies-list-item:nth-child(1),
+            .technologies-list-item:nth-child(2),
+            .technologies-list-item:nth-child(3),
+            .technologies-list-item:nth-child(4) {
+                margin-bottom: 25px;
+            }
+        }
+
+        /* Small Mobile (< 576px) */
+        @media (max-width: 575px) {
+            .technologies-section {
+                min-height: 700px;
+            }
+
+            .technologies-content-wrapper {
+                padding-top: 100px;
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+
+            .technologies-bg-wrapper {
+                width: 100%;
+                height: 100%;
+                left: 0;
+                opacity: 0.4;
+            }
+
+            .technologies-bg-img {
+                object-position: bottom center;
+            }
+
+            .technologies-heading {
+                font-size: 28px;
+                line-height: 38px;
+                width: auto;
+                height: auto;
+                margin-bottom: 30px;
+            }
+
+            .technologies-list-item {
+                font-size: 14px;
+                line-height: 32px;
+                width: auto;
+                height: auto;
+                padding-left: 30px;
+            }
+
+            .technologies-list-item::before {
+                width: 8px;
+                height: 8px;
+                top: 12px;
+            }
+
+            .technologies-list-item:nth-child(1),
+            .technologies-list-item:nth-child(2),
+            .technologies-list-item:nth-child(3),
+            .technologies-list-item:nth-child(4) {
+                margin-bottom: 20px;
+            }
+        }
+
+
+
+        
+        /* ========== BUY OR SELL CAR SECTION ========== */
+        .buysell-section {
+            position: relative;
+            width: 100%;
+            background: #010815;
+            padding: 100px 0 150px;
+            overflow: hidden;
+        }
+
+        .buysell-section .container-fluid {
+            max-width: 1920px;
+            position: relative;
+        }
+
+        /* Main Section Title */
+        .buysell-main-title {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 700;
+            font-size: 54px;
+            line-height: 94px;
+            letter-spacing: 0;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 190px;
+            opacity: 1;
+        }
+
+        /* Top Cards Container */
+        .buysell-cards-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+            margin-bottom: 160px ;
+            padding: 0 161px;
+        }
+
+        /* Individual Card */
+        .buysell-card {
+            flex: 1;
+            max-width: 620px;
+        }
+
+        /* Card with border (Sell Your Vehicles) */
+        /* .buysell-card-bordered {
+            border: 3px solid #0E88D2;
+            padding: 30px;
+            border-radius: 8px;
+        } */
+
+        /* Card Header */
+        .buysell-card-header {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+
+        /* Card Icon */
+        .buysell-card-icon {
+            width: 69px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .buysell-card-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Card Title */
+        .buysell-card-title {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 94px;
+            letter-spacing: 0;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            opacity: 1;
+            margin: 0;
+        }
+
+        /* Card Description */
+        .buysell-card-desc {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 49px;
+            letter-spacing: 0.18px;
+            color: #FFFFFF;
+            opacity: 1;
+            margin: 0;
+        }
+
+        /* Bottom Section with Circle Car */
+        .buysell-bottom-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 154px;
+            gap: 80px;
+        }
+
+        /* Circle Car Container */
+        .buysell-circle-wrapper {
+  position: relative;
+  width: 650px;
+  height: 630px;
+  flex-shrink: 0;
+  margin-left: 30px; /* matches screenshot offset */
+}
+
+
+      /* Partial Circle (Arc Style) */
+.buysell-circle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 13px solid #FFFFFF;
+  border-radius: 50%;
+  border-right-color: transparent; 
+  border-bottom-color: transparent; 
+  transform: rotate(-5deg); 
+  opacity: 1;
+  z-index: 0;
+}
+
+
+.buysell-circle-car {
+  position: absolute;
+  bottom: 55px; 
+  left: 49%;
+  transform: translateX(-50%);
+  width: 88%; /* fills the arc nicely */
+  height: auto;
+  z-index: 1;
+  filter: brightness(1.05);
+}
+
+
+        /* Circle Title */
+        .buysell-circle-title {
+            position: absolute;
+            top: 84px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 94px;
+            letter-spacing: 0;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            text-align: center;
+            width: 100%;
+            z-index: 2;
+        }
+
+        /* Subtext below "YOU NEED A CAR" */
+.buysell-circle-subtext {
+  position: absolute;
+  top: 155px;              /* positions it perfectly under title */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+
+        /* Car Image inside Circle */
+        /* .buysell-circle-car {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: auto;
+            z-index: 1;
+        } */
+
+        /* Right Content */
+        .buysell-right-content {
+            flex: 1;
+            max-width: 805px;
+        }
+
+        /* Bottom Title */
+        .buysell-bottom-title {
+            font-family: 'Titillium Web', sans-serif;
+            font-weight: 700;
+            font-size: 50px;
+            line-height: 94px;
+            letter-spacing: 0;
+            color: #FFFFFF;
+            text-transform: uppercase;
+            text-align: left;
+            margin-bottom: 57px;
+            opacity: 1;
+        }
+
+        /* Bottom Description */
+        .buysell-bottom-desc {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 23px;
+            line-height: 49px;
+            letter-spacing: 0.23px;
+            color: #FFFFFF;
+            opacity: 1;
+            margin: 0;
+        }
+
+        /* ========== RESPONSIVE DESIGN ========== */
+
+        /* Desktop (1400px - 1919px) */
+        @media (min-width: 1400px) and (max-width: 1919px) {
+            .buysell-cards-top {
+                padding: 0 120px;
+                gap: 50px;
+            }
+
+            .buysell-bottom-section {
+                padding: 0 120px;
+            }
+
+            .buysell-circle-wrapper {
+                width: 550px;
+                height: 550px;
+            }
+
+            .buysell-main-title {
+                font-size: 50px;
+            }
+
+            .buysell-bottom-title {
+                font-size: 45px;
+            }
+        }
+
+        /* Laptop (1200px - 1399px) */
+        @media (min-width: 1200px) and (max-width: 1399px) {
+            .buysell-cards-top {
+                padding: 0 80px;
+                gap: 40px;
+            }
+
+            .buysell-bottom-section {
+                padding: 0 80px;
+                gap: 60px;
+            }
+
+            .buysell-circle-wrapper {
+                width: 480px;
+                height: 480px;
+            }
+
+            .buysell-circle {
+                border-width: 11px;
+            }
+
+            .buysell-main-title {
+                font-size: 48px;
+                margin-bottom: 70px;
+            }
+
+            .buysell-card-title {
+                font-size: 28px;
+            }
+
+            .buysell-card-desc {
+                font-size: 17px;
+                line-height: 45px;
+            }
+
+            .buysell-bottom-title {
+                font-size: 42px;
+                margin-bottom: 35px;
+            }
+
+            .buysell-bottom-desc {
+                font-size: 21px;
+                line-height: 45px;
+            }
+
+            .buysell-circle-title {
+                font-size: 42px;
+            }
+        }
+
+        /* Tablet (768px - 1199px) */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .buysell-section {
+                padding: 80px 0 120px;
+            }
+
+            .buysell-cards-top {
+                flex-direction: column;
+                padding: 0 60px;
+                gap: 50px;
+                margin-bottom: 100px;
+            }
+
+            .buysell-card {
+                max-width: 100%;
+            }
+
+            .buysell-bottom-section {
+                flex-direction: column;
+                padding: 0 60px;
+                gap: 60px;
+            }
+
+            .buysell-circle-wrapper {
+                width: 420px;
+                height: 420px;
+            }
+
+            .buysell-circle {
+                border-width: 10px;
+            }
+
+            .buysell-main-title {
+                font-size: 44px;
+                margin-bottom: 60px;
+            }
+
+            .buysell-card-title {
+                font-size: 26px;
+            }
+
+            .buysell-card-desc {
+                font-size: 16px;
+                line-height: 42px;
+            }
+
+            .buysell-bottom-title {
+                font-size: 38px;
+                text-align: center;
+            }
+
+            .buysell-bottom-desc {
+                font-size: 19px;
+                line-height: 42px;
+                text-align: center;
+            }
+
+            .buysell-right-content {
+                max-width: 100%;
+            }
+
+            .buysell-circle-title {
+                font-size: 38px;
+            }
+        }
+
+        /* Mobile (576px - 767px) */
+        @media (min-width: 576px) and (max-width: 767px) {
+            .buysell-section {
+                padding: 60px 0 100px;
+            }
+
+            .buysell-cards-top {
+                flex-direction: column;
+                padding: 0 40px;
+                gap: 40px;
+                margin-bottom: 80px;
+            }
+
+            .buysell-bottom-section {
+                flex-direction: column;
+                padding: 0 40px;
+                gap: 50px;
+            }
+
+            .buysell-circle-wrapper {
+                width: 350px;
+                height: 350px;
+            }
+
+            .buysell-circle {
+                border-width: 9px;
+            }
+
+            .buysell-main-title {
+                font-size: 36px;
+                line-height: 70px;
+                margin-bottom: 50px;
+            }
+
+            .buysell-card-header {
+                gap: 20px;
+            }
+
+            .buysell-card-icon {
+                width: 55px;
+                height: 48px;
+            }
+
+            .buysell-card-title {
+                font-size: 22px;
+                line-height: 60px;
+            }
+
+            .buysell-card-desc {
+                font-size: 15px;
+                line-height: 38px;
+            }
+
+            .buysell-bottom-title {
+                font-size: 32px;
+                line-height: 70px;
+                text-align: center;
+            }
+
+            .buysell-bottom-desc {
+                font-size: 17px;
+                line-height: 38px;
+                text-align: center;
+            }
+
+            .buysell-circle-title {
+                font-size: 32px;
+                line-height: 70px;
+            }
+        }
+
+        /* Small Mobile (< 576px) */
+        @media (max-width: 575px) {
+            .buysell-section {
+                padding: 50px 0 80px;
+            }
+
+            .buysell-cards-top {
+                flex-direction: column;
+                padding: 0 30px;
+                gap: 35px;
+                margin-bottom: 70px;
+            }
+
+            .buysell-bottom-section {
+                flex-direction: column;
+                padding: 0 30px;
+                gap: 40px;
+            }
+
+            .buysell-circle-wrapper {
+                width: 280px;
+                height: 280px;
+            }
+
+            .buysell-circle {
+                border-width: 8px;
+            }
+
+            .buysell-main-title {
+                font-size: 30px;
+                line-height: 60px;
+                margin-bottom: 40px;
+            }
+
+            .buysell-card-header {
+                gap: 18px;
+                margin-bottom: 25px;
+            }
+
+            .buysell-card-icon {
+                width: 48px;
+                height: 42px;
+            }
+
+            .buysell-card-title {
+                font-size: 20px;
+                line-height: 50px;
+            }
+
+            .buysell-card-desc {
+                font-size: 14px;
+                line-height: 34px;
+            }
+
+            .buysell-card-bordered {
+                padding: 20px;
+            }
+
+            .buysell-bottom-title {
+                font-size: 28px;
+                line-height: 60px;
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .buysell-bottom-desc {
+                font-size: 15px;
+                line-height: 34px;
+                text-align: center;
+            }
+
+            .buysell-circle-title {
+                font-size: 28px;
+                line-height: 60px;
+                top: 50px;
+            }
+
+            .buysell-circle-car {
+                bottom: 60px;
+                width: 75%;
+            }
+        }
+
+
+       /* HOW IT WORKS SECTION (already in your layout) */
+.howitworks-section {
+  position: relative;
+  width: 100%;
+  background: #010815;
+  padding: 100px 0 120px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.howitworks-title {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 94px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 40px;
+}
+
+.howitworks-desc {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 23px;
+  line-height: 49px;
+  letter-spacing: 0.23px;
+  color: #ffffff;
+  max-width: 1408px;
+  margin: 0 auto 80px;
+}
+
+/* NEW: Button same as “GET STARTED” style */
+.howitworks-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding-left: 65px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  text-transform: uppercase;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  z-index: 1;
+}
+
+/* “SEARCH” text (over white circle) */
+.howitworks-btn .search-text {
+  color: #010815;
+  margin-right: 16px;
+  z-index: 2;
+}
+
+/* “CAR” text (plain white text) */
+.howitworks-btn .car-text {
+  color: #ffffff;
+}
+
+/* White circle behind “SEARCH” */
+.howitworks-btn::before {
+  content: "";
+  position: absolute;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 110px;
+  height: 58px;
+  background: #ffffff;
+  border-radius: 32PX;
+  z-index: -1;
+  transition: all 0.3s ease-out;
+}
+
+/* Hover effects */
+.howitworks-btn:hover::before {
+  background: #0071ce;
+}
+
+.howitworks-btn:hover .search-text {
+  color: #ffffff;
+}
+
+.howitworks-btn:hover .car-text {
+  color: #010815;
+}
+
+/* ======= INSTRUCTION SECTION ======= */
+.instruction-section {
+  position: relative;
+  background: #010815;
+  width: 100%;
+  padding: 120px 0 160px;
+  color: #ffffff;
+}
+
+/* Container */
+.instruction-section .container-fluid {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* ======= MAIN HEADING ======= */
+.instruction-title {
+  font-family: "Slenco", sans-serif;
+  font-weight: 900; /* Black */
+  font-size: 45px;
+  line-height: 58px;
+  letter-spacing: 1.8px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 95px;
+  opacity: 1;
+}
+
+/* ======= 2 COLUMNS LAYOUT ======= */
+.instruction-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 160px;
+  padding: 0 180px;
+}
+
+/* ======= COLUMN ======= */
+.instruction-column {
+  flex: 1;
+  min-width: 500px;
+}
+
+/* ======= SUBHEADINGS ======= */
+.instruction-subtitle {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700; /* Bold */
+  font-size: 36px;
+  line-height: 63px;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+/* ======= LIST ITEMS ======= */
+.instruction-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.instruction-list li {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 70px; /* balanced default */
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding-left: 40px;
+  margin: 0 0 15px 0;
+  opacity: 1;
+}
+
+/* ======= BULLET DOTS ======= */
+.instruction-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+/* ======= TO BUYERS SPACING (wider vertical rhythm) ======= */
+.instruction-column:first-child .instruction-list li {
+  margin-bottom: 32px;
+  line-height: 80px; /* visually open layout */
+}
+
+/* ======= RESPONSIVE ADJUSTMENTS ======= */
+@media (max-width: 1200px) {
+  .instruction-columns {
+    flex-direction: column;
+    gap: 100px;
+    padding: 0 100px;
+  }
+
+  .instruction-list li {
+    line-height: 60px;
+  }
+
+  .instruction-column:first-child .instruction-list li {
+    line-height: 70px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .instruction-title {
+    font-size: 36px;
+    margin-bottom: 70px;
+  }
+
+  .instruction-subtitle {
+    font-size: 28px;
+    line-height: 50px;
+  }
+
+  .instruction-columns {
+    padding: 0 40px;
+    gap: 60px;
+  }
+
+  .instruction-list li {
+    font-size: 16px;
+    line-height: 50px;
+  }
+
+  .instruction-list li::before {
+    width: 12px;
+    height: 12px;
+  }
+
+  .instruction-column:first-child .instruction-list li {
+    line-height: 60px;
+    margin-bottom: 20px;
+  }
+}
+
+.footer-section {
+  width: 100%;
+  background: #010815;
+  border-top: 3px solid rgba(255, 255, 255, 0.31);
+  padding: 100px 80px 40px;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+}
+
+/* Main Container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 100px;
+}
+
+/* ===== Left: Logo ===== */
+.footer-left .footer-logo {
+  width: 445px;
+  height: auto;
+  opacity: 1;
+}
+
+/* ===== Middle: About Section ===== */
+.footer-about {
+  max-width: 700px;
+}
+
+.footer-heading {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 58px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: flex-start;
+  gap: 100px;
+}
+
+.footer-columns ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-columns li {
+  margin-bottom: 20px;
+}
+
+.footer-columns a {
+  font-family: "Helvetica", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 1.02px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-columns a.active {
+  color: #39A1E1;
+}
+
+.footer-columns a:hover {
+  color: #39A1E1;
+}
+
+/* ===== Right: Connect Section ===== */
+.footer-connect {
+  text-align: left;
+}
+
+.footer-connect h4 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 58px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.footer-connect ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-connect li {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  line-height: 58px;
+  letter-spacing: 0.72px;
+  text-transform: uppercase;
+}
+
+.footer-connect i {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+/* ===== Footer Bottom ===== */
+.footer-bottom {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+</style>
 
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
-    <div class="container-fluid px-xxl-5 px-lg-5 px-md-4 px-3">
-      <!-- Logo -->
-      <a class="navbar-brand" href="#">
-        <img src="assets/img/LOGO w.png" alt="Robo Negotiator Logo" />
-      </a>
+   <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="https://via.placeholder.com/200x50/1E5A9E/ffffff?text=ROBO+NEGOTIATOR" alt="Robo Negotiator Logo">
+            </a>
 
-      <!-- Toggler -->
-      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-        data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+            </button>
 
-      <!-- Nav Links -->
-      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
-        <ul class="navbar-nav text-center gap-lg-4 gap-3">
-          <li class="nav-item"><a class="nav-link nav-home active" href="#">Home</a></li>
-          <li class="nav-item"><a class="nav-link nav-marketplace" href="#">Marketplace</a></li>
-          <li class="nav-item"><a class="nav-link nav-how-works" href="#">How Its Works</a></li>
-          <li class="nav-item"><a class="nav-link nav-blogs" href="#">Blogs</a></li>
-          <li class="nav-item"><a class="nav-link nav-about" href="#">About Us</a></li>
-          <li class="nav-item"><a class="nav-link nav-contact" href="#">Contact</a></li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" id="navMenu">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home" data-index="0">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#marketplace" data-index="1" id="marketplaceDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            MARKETPLACE
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="marketplaceDropdown">
+                            <li><a class="dropdown-item" href="#search-cars">SEARCH CARS</a></li>
+                            <li><a class="dropdown-item" href="#sell-cars">SELL CARS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#how-it-works" data-index="2" id="howItWorksDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            HOW ITS WORKS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="howItWorksDropdown">
+                            <li><a class="dropdown-item" href="#automotive-industry">AUTOMOTIVE INDUSTRY</a></li>
+                            <li><a class="dropdown-item" href="#robonegotiator">ROBONEGOTIATOR</a></li>
+                            <li><a class="dropdown-item" href="#ecommerce">ECOMMERCE</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blogs" data-index="3">BLOGS</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#about" data-index="4" id="aboutUsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ABOUT US
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="aboutUsDropdown">
+                            <li><a class="dropdown-item" href="#try-our-naas">TRY OUR NAAS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" data-index="5">CONTACT</a>
+                    </li>
+                    <span class="nav-indicator"></span>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center">
+        <div class="container-fluid px-xxl-5 px-lg-5 px-md-4 px-3">
+            <div class="row align-items-center justify-content-between">
+                <!-- Left Text -->
+                <div class="col-lg-6 col-md-7 col-12 hero-content">
+                    <h1 class="hero-title">
+                        AUTOMATED NEGOTIATIONS<br>
+                        <span class="powered">POWERED</span>
+                        <span class="by">BY</span>
+                        <span class="robonego">ROBONEGOTIATOR</span>
+                    </h1>
+
+                    <p class="hero-desc">
+                        List your cars in our marketplace, we find the buyers and secure an optimal price.
+                    </p>
+
+                    <a href="#" class="btn hero-btn">
+                        <span class="get-text">GET</span> <span class="started-text">STARTED</span>
+                    </a>
+                </div>
+
+                <!-- Right Image -->
+                <div class="col-lg-6 col-md-5 col-12 text-center">
+                    <img src="assets/img/bmw-22440.png" alt="Blue BMW Car" class="hero-car img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Services Section -->
+    <section class="services-section">
+        <div class="container-fluid px-xxl-5 px-xl-4 px-lg-4 px-md-3 px-3">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="services-title">WHAT WE PROVIDE</h2>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="services-container">
+                        <!-- Service Card 1: Find Right Car -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <img src="assets/img/Group 53.svg" alt="Find Right Car">
+                            </div>
+                            <p class="service-label">FIND RIGHT CAR</p>
+                        </div>
+
+                        <!-- Service Card 2: Safe and Secure -->
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <img src="assets/img/noun_Secured_3008506.svg" alt="Safe and Secure">
+                            </div>
+                            <p class="service-label">SAFE AND SECURE</p>
+                        </div>
+
+                        <!-- Service Card 3: Sell Your Car -->
+                        <div class="service-card">
+                            <div class="service-icon service-icon-dollar">
+                                <img src="assets/img/Group 54.svg" alt="Sell Your Car">
+                                <span class="dollar-sign">$</span>
+                            </div>
+                            <p class="service-label">SELL YOUR CAR</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Technologies Section -->
+    <section class="technologies-section">
+        <!-- Background Car Image - Exact positioning -->
+        <div class="technologies-bg-wrapper">
+            <img src="assets/img/Group 71.png" alt="BMW Car" class="technologies-bg-img">
+        </div>
+
+        <div class="container-fluid">
+            <div class="technologies-content-wrapper">
+                <h2 class="technologies-heading">TECHNOLOGIES WE HAVE USED</h2>
+                
+                <ul class="technologies-list">
+                    <li class="technologies-list-item">
+                        WE ARE TECHNOLOGY COMPANY
+                    </li>
+                    <li class="technologies-list-item">
+                        SOFTWARE AS A SERVICE COMPANY,
+                    </li>
+                    <li class="technologies-list-item">
+                        WE HAVE AI/ INTELLIGENT SOFTWARE
+                    </li>
+                    <li class="technologies-list-item">
+                        WE HAVE A MARKETPLACE WHERE SELLER AND BUYER CAN MEET/ TRY OUT NAAS (NEGOTIATION AS A SERVICE)
+                    </li>
+                    <li class="technologies-list-item">
+                        WE ALSO ALLOW WEBSITE OWNERS/DEALERSHIPS TO INSTALL OUR SOFTWARE ON THEIR WEBSITES.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    
+      <!-- Buy or Sell Car Section -->
+    <section class="buysell-section">
+        <div class="container-fluid">
+            <!-- Main Title -->
+            <h2 class="buysell-main-title">BUY OR SELL A CAR</h2>
+
+            <!-- Top Cards -->
+            <div class="buysell-cards-top">
+                <!-- Card 1: Find Your Car -->
+                <div class="buysell-card">
+                    <div class="buysell-card-header">
+                        <div class="buysell-card-icon">
+                            <img src="assets/img/noun_selection_3777015.svg" alt="Find Your Car">
+                        </div>
+                        <h3 class="buysell-card-title">FIND YOUR CAR</h3>
+                    </div>
+                    <p class="buysell-card-desc">
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.It is a long established fact It is a long established fact that a reader.
+                    </p>
+                </div>
+
+                <!-- Card 2: Sell Your Vehicles (with border) -->
+                <div class="buysell-card buysell-card-bordered">
+                    <div class="buysell-card-header">
+                        <div class="buysell-card-icon">
+                            <img src="assets/img/noun_sell_2435347.svg" alt="Sell Your Vehicles">
+                        </div>
+                        <h3 class="buysell-card-title">SELL YOUR VEHICLES</h3>
+                    </div>
+                    <p class="buysell-card-desc">
+                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution.It is a long established fact It is a long established fact that a reader.
+                    </p>
+                </div>
+            </div>
+
+       <!-- Bottom Section with Circle Car -->
+<div class="buysell-bottom-section">
+  <!-- Circle with Car -->
+  <div class="buysell-circle-wrapper">
+    <div class="buysell-circle"></div>
+
+    <!-- Title -->
+    <h3 class="buysell-circle-title">YOU NEED A CAR</h3>
+
+    <!-- Two-line paragraph -->
+    <p class="buysell-circle-subtext">
+      It is a long established fact that a reader will be distracted by the
+    </p>
+
+    <!-- Car -->
+    <img src="assets/img/NicePng_honda-city-car-png_7910297.png" alt="Honda Civic" class="buysell-circle-car">
+  </div>
+
+  <!-- Right Content -->
+  <div class="buysell-right-content">
+    <h3 class="buysell-bottom-title">FIND A CAR</h3>
+    <p class="buysell-bottom-desc">
+      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution. It is a long established fact that a reader will be distracted by the readable content.
+    </p>
+  </div>
+</div>
+
+        </div>
+    </section>
+
+
+  <section class="howitworks-section">
+  <div class="container-fluid">
+    <h2 class="howitworks-title">HOW IT WORKS?</h2>
+    <p class="howitworks-desc">
+      We have plans where AI/NLP based Software Tool will interact with buyers and answer questions,
+      negotiate/finalize price and also schedule an appointment for test drive or other needs.
+      We can demo too.
+    </p>
+
+    <a href="#" class="howitworks-btn">
+      <span class="search-text">SEARCH</span>
+      <span class="car-text">CAR</span>
+    </a>
+  </div>
+</section>
+
+<section class="instruction-section">
+  <div class="container-fluid">
+    <!-- MAIN HEADING -->
+    <h2 class="instruction-title">INSTRUCTION</h2>
+
+    <div class="instruction-columns">
+      <!-- TO BUYERS -->
+      <div class="instruction-column">
+        <h3 class="instruction-subtitle">TO BUYERS</h3>
+        <ul class="instruction-list">
+          <li>THERE IS UI SIMULATOR TO TRY AND SEE HOW IT WORKS</li>
+          <li>THERE IS A CAR MARKETPLACE WHERE I CAN TRY TO NEGOTIATE AND BUY CAR.</li>
+          <li>I DON’T NEED TO TALK TO ANY SALESPERSON</li>
+          <li>MY PRIVACY IS TAKEN CARE OF. NO ONE WILL CALL ME.</li>
+          <li>NAAS – NEGOTIATION IS NEUTRAL AND WIN–WIN TOOL.</li>
         </ul>
       </div>
-    </div>
-  </nav>
-<section class="hero-section d-flex align-items-center">
-  <div class="container-fluid px-xxl-5 px-lg-5 px-md-4 px-3">
-    <div class="row align-items-center justify-content-between">
-      <!-- Left Text -->
-      <div class="col-lg-6 col-md-7 col-12 hero-content">
-       <h1 class="hero-title">
-  AUTOMATED NEGOTIATIONS<br>
-  <span class="powered">POWERED</span>
-  <span class="by">BY</span>
-  <span class="robonego">ROBONEGOTIATOR</span>
-</h1>
 
-        <p class="hero-desc">
-          List your cars in our marketplace, we find the buyers and secure an optimal price.
-        </p>
-
-        <a href="#" class="btn hero-btn">
-  <span class="get-text">GET</span> <span class="started-text">STARTED</span>
-</a>
-
-      </div>
-
-      <!-- Right Image -->
-      <div class="col-lg-6 col-md-5 col-12 text-center">
-        <img src="assets/img/bmw-22440.png" alt="Blue BMW Car" class="hero-car img-fluid">
+      <!-- TO SELLERS -->
+      <div class="instruction-column">
+        <h3 class="instruction-subtitle">TO SELLERS</h3>
+        <ul class="instruction-list">
+          <li>WE HAVE A MARKETPLACE WHERE I CAN SELL ANYTHING THROUGH THIS PORTAL/MARKETPLACE. IT IS FREE FOR NOW.</li>
+          <li>I MUST HAVE A DEAL BUT I DECIDE THE SELL PRICE.</li>
+          <li>SYSTEM GENERATES A VOUCHER WHEN SYSTEM NEGOTIATES IN MY PRICE SYSTEM LETS ME NEGOTIATE BY TEXT/EMAIL IF BUYER IS SERIOUS BUT LITTLE SHORT IN HIS COUNTEROFFER.</li>
+          <li>I WILL NOT BE BOTHERED IF A BUYER OFFERS A RIDICULOUS PRICE AND SYSTEM HAS A WAY TO SUGGEST MY ALTERNATE PRODUCT TO THE BUYER IN THAT CASE.</li>
+          <li>IF I WANT TO OFFER SAME FEATURE TO MY OWN CUSTOMERS, I CAN INSTALL THIS ON MY OWN WEBSITE.</li>
+          <li>FOR NOW, I CAN USE THIS FOR AUTOMOTIVE PRODUCTS BUT THEY WILL GROW TO OTHER CATEGORIES/VERTICALS SOON.</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
+
+<footer class="footer-section">
+  <div class="footer-container">
+    <!-- Left: Logo -->
+    <div class="footer-left">
+      <img src="assets/img/LOGO w.png"  class="footer-logo">
+    </div>
+
+    <!-- Middle: About -->
+    <div class="footer-about">
+      <h4 class="footer-heading">ABOUT</h4>
+      <div class="footer-columns">
+        <ul>
+          <li><a href="#" class="active">HOME PAGE</a></li>
+          <li><a href="#">HOW ITS WORKS</a></li>
+          <li><a href="#">AUTOMOTIVE INDUSTRY</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">ECOMMERCE</a></li>
+          <li><a href="#">ROBONEGOTIATOR</a></li>
+          <li><a href="#">ABOUT US</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">CONTACT US</a></li>
+          <li><a href="#">BLOGS</a></li>
+          <li><a href="#">NAAS</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Right: Connect -->
+    <div class="footer-connect">
+      <h4 class="footer-heading">CONNECT</h4>
+      <ul>
+        <li><i class="fa-solid fa-envelope"></i> INFO@ROBONEGOTIATOR.COM</li>
+        <li><i class="fa-solid fa-phone"></i> 937-969-7626</li>
+        <li><i class="fa-brands fa-facebook-f"></i> /ROBONEGOTIATOR</li>
+        <li><i class="fa-brands fa-x-twitter"></i> @ROBONEGOTIATOR</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    © COPYRIGHT-2021 ROBONEGOTIATOR. DESIGN OBSESSED
+  </div>
+</footer>
+
+
+
+
+
+
+
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const indicator = document.querySelector('.nav-indicator');
+            const navbar = document.querySelector('.navbar-collapse');
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const body = document.body;
+            
+            // Function to update indicator position
+            function updateIndicator(link) {
+                if (window.innerWidth >= 992) {
+                    const linkRect = link.getBoundingClientRect();
+                    const navRect = link.closest('.navbar-nav').getBoundingClientRect();
+                    const left = linkRect.left - navRect.left + (linkRect.width / 2) - 17;
+                    indicator.style.left = left + 'px';
+                }
+            }
+
+            // Initialize indicator on the active link
+            const activeLink = document.querySelector('.nav-link.active');
+            if (activeLink && window.innerWidth >= 992) {
+                setTimeout(() => updateIndicator(activeLink), 100);
+            }
+
+            // Handle click events
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Don't prevent default for dropdown toggles
+                    if (this.classList.contains('dropdown-toggle')) {
+                        return;
+                    }
+                    
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Update indicator position
+                    updateIndicator(this);
+                    
+                    // Close mobile menu
+                    if (window.innerWidth < 992) {
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbar);
+                        if (bsCollapse) {
+                            bsCollapse.hide();
+                        }
+                    }
+                });
+            });
+
+            // Handle dropdown item clicks
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Close mobile menu
+                    if (window.innerWidth < 992) {
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbar);
+                        if (bsCollapse) {
+                            bsCollapse.hide();
+                        }
+                    }
+                });
+            });
+
+            // Prevent body scroll when mobile menu is open
+            navbar.addEventListener('show.bs.collapse', function() {
+                if (window.innerWidth < 992) {
+                    body.classList.add('menu-open');
+                }
+            });
+
+            navbar.addEventListener('hidden.bs.collapse', function() {
+                body.classList.remove('menu-open');
+            });
+
+            // Update indicator on window resize
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    const activeLink = document.querySelector('.nav-link.active');
+                    if (activeLink && window.innerWidth >= 992) {
+                        updateIndicator(activeLink);
+                    }
+                    
+                    // Close mobile menu on resize to desktop
+                    if (window.innerWidth >= 992) {
+                        const bsCollapse = bootstrap.Collapse.getInstance(navbar);
+                        if (bsCollapse && navbar.classList.contains('show')) {
+                            bsCollapse.hide();
+                        }
+                        body.classList.remove('menu-open');
+                    }
+                }, 250);
+            });
+
+            // Recalculate indicator position after navbar collapse animation
+            navbar.addEventListener('shown.bs.collapse', function() {
+                const activeLink = document.querySelector('.nav-link.active');
+                if (activeLink && window.innerWidth >= 992) {
+                    updateIndicator(activeLink);
+                }
+            });
+        });
+    </script>
+
+
+
+
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
